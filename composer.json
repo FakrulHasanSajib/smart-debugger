@@ -1,39 +1,24 @@
 {
-    "name": "your-laravel-project",
-    "type": "project",
-    "description": "A Laravel project",
-    "require": {
-        "php": "^8.0",
-        "laravel/framework": "^10.0",
-        "fakrulhasansajib/smart-debugger": "dev-main"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/FakrulHasanSajib/smart-debugger"
-        }
-    ],
+    "name": "fakrulhasansajib/smart-debugger",
+    "description": "A smart Laravel debugger with AI (Bangla), live notifications, and auto patch suggestions.",
+    "type": "library",
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "SmartDebugger\\": "src/"
         }
     },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SmartDebugger\\SmartDebuggerServiceProvider"
+            ]
+        }
     },
-    "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate"
-        ],
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ]
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^10.0",
+        "openai-php/laravel": "^0.7.0",
+        "pusher/pusher-php-server": "^7.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
