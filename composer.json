@@ -1,35 +1,29 @@
 {
-  "name": "fakrulhasan/smart-debugger",
-  "description": "A Laravel package for advanced error debugging with Bengali AI suggestions and auto patch.",
-  "keywords": ["laravel", "debugger", "bangla", "error", "patch"],
-  "type": "library",
-  "license": "MIT",
-  "authors": [
+  "name": "fakrulhasan/my-laravel-project",
+  "description": "A Laravel project using Smart Debugger package",
+  "type": "project",
+  "require": {
+    "php": "^8.1",
+    "laravel/framework": "^10.0",
+    "fakrulhasan/smart-debugger": "dev-main"
+  },
+  "repositories": [
     {
-      "name": "Fakrul Hasan Sajib",
-      "email": "your-email@example.com"
+      "type": "vcs",
+      "url": "https://github.com/FakrulHasanSajib/smart-debugger.git"
     }
   ],
-  "require": {
-    "php": "^8.0",
-    "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
-    "illuminate/console": "^8.0|^9.0|^10.0|^11.0|^12.0",
-    "illuminate/database": "^8.0|^9.0|^10.0|^11.0|^12.0",
-    "illuminate/routing": "^8.0|^9.0|^10.0|^11.0|^12.0",
-    "illuminate/view": "^8.0|^9.0|^10.0|^11.0|^12.0"
-  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "FakrulHasan\\SmartDebugger\\": "src/"
+      "App\\": "app/"
     }
   },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "FakrulHasan\\SmartDebugger\\SmartDebuggerServiceProvider"
-      ]
-    }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ]
+  }
 }
