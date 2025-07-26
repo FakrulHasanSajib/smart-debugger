@@ -6,17 +6,14 @@ use Illuminate\Support\ServiceProvider;
 
 class SmartDebuggerServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     */
     public function boot()
     {
-        // Publish config file
+        // Publish config
         $this->publishes([
             __DIR__.'/../config/smart-debugger.php' => config_path('smart-debugger.php'),
         ], 'config');
 
-        // Publish migration files
+        // Publish migrations
         $this->publishes([
             __DIR__.'/../database/migrations/' => database_path('migrations'),
         ], 'migrations');
@@ -35,7 +32,7 @@ class SmartDebuggerServiceProvider extends ServiceProvider
         // Load migrations
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        // Register commands if running in console
+        // Register console commands only if running in console
         if ($this->app->runningInConsole()) {
             $this->commands([
                 Console\AnalyzeErrorsCommand::class,
@@ -46,12 +43,9 @@ class SmartDebuggerServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * Register the application services.
-     */
     public function register()
     {
-        // Merge config file so user can override
+        // Merge config so user can override
         $this->mergeConfigFrom(
             __DIR__.'/../config/smart-debugger.php',
             'smart-debugger'
