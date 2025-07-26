@@ -1,7 +1,13 @@
 {
-  "name": "fakrulhasan/smart-debugger",
+  "name": "fakrulhasansajib/smart-debugger",
   "description": "A Laravel package for advanced error debugging with Bengali AI suggestions and auto patch.",
-  "keywords": ["laravel", "debugger", "bangla", "error", "patch"],
+  "keywords": [
+    "laravel",
+    "debugger",
+    "bangla",
+    "error",
+    "patch"
+  ],
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -20,13 +26,18 @@
   },
   "autoload": {
     "psr-4": {
-      "FakrulHasan\\SmartDebugger\\": "src/"
+      "FakrulHasansajib\\SmartDebugger\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FakrulHasansajib\\SmartDebugger\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "FakrulHasan\\SmartDebugger\\SmartDebuggerServiceProvider"
+        "FakrulHasansajib\\SmartDebugger\\SmartDebuggerServiceProvider"
       ]
     }
   },
