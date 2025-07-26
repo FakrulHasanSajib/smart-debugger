@@ -1,6 +1,6 @@
 <?php
 
-namespace FakrulHasan\SmartDebugger;
+namespace FakrulHasansajib\SmartDebugger;
 
 use Illuminate\Support\ServiceProvider;
 
