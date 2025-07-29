@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.0.2",
         "brian2694/laravel-toastr": "^5.57",
-        "fakrulhasansajib/smart-debugger": "*",
+        "fakrulhasansajib/smart-debugger": "dev-main",
         "guzzlehttp/guzzle": "^7.2",
         "intervention/image": "^2.7",
         "laravel/framework": "^9.19",
@@ -40,6 +40,12 @@
             "Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/FakrulHasanSajib/smart-debugger"
+        }
+    ],
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
