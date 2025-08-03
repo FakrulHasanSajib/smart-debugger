@@ -4,13 +4,13 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "SmartDebugger\\": "src/"
+            "FakrulHasanSajib\\SmartDebugger\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "SmartDebugger\\SmartDebuggerServiceProvider"
+                "FakrulHasanSajib\\SmartDebugger\\SmartDebuggerServiceProvider"
             ]
         }
     },
